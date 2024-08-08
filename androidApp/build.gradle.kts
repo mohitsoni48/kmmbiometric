@@ -44,5 +44,7 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     debugImplementation(libs.compose.ui.tooling)
     implementation ("androidx.navigation:navigation-compose:2.7.6")
+    implementation ("androidx.biometric:biometric:1.1.0")
+
 
 }

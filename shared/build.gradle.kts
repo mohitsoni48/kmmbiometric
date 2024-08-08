@@ -30,10 +30,13 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
-            //put your multiplatform dependencies here
+            implementation(libs.androidx.lifecycle.viewmodel.ktx)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+        }
+        androidMain.dependencies {
+            implementation ("androidx.biometric:biometric:1.1.0")
         }
     }
 }
