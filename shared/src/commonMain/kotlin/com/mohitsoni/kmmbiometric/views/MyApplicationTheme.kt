@@ -1,4 +1,4 @@
-package com.mohitsoni.kmmbiometric.android
+package com.mohitsoni.kmmbiometric.views
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape

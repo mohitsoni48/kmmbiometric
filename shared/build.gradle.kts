@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.kotlinCocoapods)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.compose.compiler)
 }
 
 kotlin {
@@ -30,10 +32,20 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
-            //put your multiplatform dependencies here
+            implementation(libs.androidx.lifecycle.viewmodel.ktx)
+            implementation(compose.ui)
+            implementation(compose.runtime)
+            implementation(compose.foundation)
+            implementation(compose.material3)
+            implementation(compose.components.resources)
+            implementation(libs.navigation.compose)
+
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+        }
+        androidMain.dependencies {
+            implementation ("androidx.biometric:biometric:1.1.0")
         }
     }
 }
@@ -41,6 +53,9 @@ kotlin {
 android {
     namespace = "com.mohitsoni.kmmbiometric"
     compileSdk = 34
+    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
+    sourceSets["main"].res.srcDirs("src/androidMain/res")
+    sourceSets["main"].resources.srcDirs("src/commonMain/resources")
     defaultConfig {
         minSdk = 28
     }
@@ -48,4 +63,10 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+}
+
+compose.resources {
+    publicResClass = true
+    packageOfResClass = "com.mohitsoni.kmmbiometric.resources"
+    generateResClass = always
 }
