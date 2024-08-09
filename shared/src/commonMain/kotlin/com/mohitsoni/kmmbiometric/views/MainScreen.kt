@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Snackbar
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -29,10 +28,9 @@ import com.mohitsoni.kmmbiometric.BiometricEffect
 import kotlinx.coroutines.flow.collectLatest
 
 @Composable
-fun MainScreen(modifier: Modifier = Modifier, bioMetricUtil: BioMetricUtil) {
+fun MainScreen(modifier: Modifier = Modifier, bioMetricUtil: BioMetricUtil, biometricViewModel: BiometricAuthorizationViewModel) {
     MyApplicationTheme {
         val navHostController = rememberNavController()
-        val biometricViewModel: BiometricAuthorizationViewModel = viewModel()
 
         LaunchedEffect(key1 = Unit) {
             biometricViewModel.effect.collectLatest {
@@ -49,7 +47,7 @@ fun MainScreen(modifier: Modifier = Modifier, bioMetricUtil: BioMetricUtil) {
         }
         Surface(
             modifier = modifier.fillMaxSize(),
-            color = MaterialTheme.colorScheme.background
+            color = Color.White
         ) {
             NavHost(navController = navHostController, startDestination = "SetPublicKey") {
                 composable("SetPublicKey") {

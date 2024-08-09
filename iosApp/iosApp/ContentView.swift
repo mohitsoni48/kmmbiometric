@@ -1,15 +1,26 @@
 import SwiftUI
 import shared
 
+let biometricUtil = BiometricUtilIosImpl()
 struct ContentView: View {
 	let greet = Greeting().greet()
     @State private var path = NavigationPath()
 
 	var body: some View {
-        NavigationStack(path: $path) {
-            SetPublicKey(path: $path)
+        ZStack {
+            ComposeViewController()
         }
 	}
+}
+
+struct ComposeViewController: UIViewControllerRepresentable {
+    @StateObject var biometricAuthorizationViewModel: BiometricAuthorizationViewModel = BiometricAuthorizationViewModel()
+    func makeUIViewController(context: Context) -> UIViewController {
+        return App_iosKt.MainViewController(bioMetricUtil: biometricUtil, biometricViewModel: biometricAuthorizationViewModel)
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -17,3 +28,5 @@ struct ContentView_Previews: PreviewProvider {
 		ContentView()
 	}
 }
+
+extension BiometricAuthorizationViewModel: ObservableObject {}

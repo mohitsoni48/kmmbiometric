@@ -6,6 +6,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.mohitsoni.kmmbiometric.BiometricAuthorizationViewModel
 import com.mohitsoni.kmmbiometric.BiometricUtilAndroidImpl
 import com.mohitsoni.kmmbiometric.CipherUtilAndroidImpl
 import com.mohitsoni.kmmbiometric.views.MainScreen
@@ -23,7 +25,8 @@ class MainActivity : FragmentActivity() {
             "This biometric is used for 2FA"
         )
         setContent {
-            MainScreen(bioMetricUtil = bioMetricUtil)
+            val biometricViewModel: BiometricAuthorizationViewModel = viewModel()
+            MainScreen(bioMetricUtil = bioMetricUtil, biometricViewModel = biometricViewModel)
         }
     }
 }

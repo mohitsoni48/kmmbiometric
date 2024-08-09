@@ -2,13 +2,14 @@ package com.mohitsoni.kmmbiometric
 
 interface BioMetricUtil {
 
+    suspend fun setAndReturnPublicKey(): String?
+    suspend fun authenticate(): AuthenticationResult
     fun canAuthenticate(): Boolean
     suspend fun generatePublicKey(): String?
-    fun getPublicKey(): String?
-    fun isValidCrypto(): Boolean
-    suspend fun authenticate(): AuthenticationResult
     fun signUserId(ucc: String): String
     fun isBiometricSet(): Boolean
+    fun getPublicKey(): String?
+    fun isValidCrypto(): Boolean
 }
 
 sealed class AuthenticationResult {

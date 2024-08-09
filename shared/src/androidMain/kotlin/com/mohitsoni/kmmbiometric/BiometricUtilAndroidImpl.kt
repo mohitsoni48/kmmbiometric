@@ -20,6 +20,14 @@ class BiometricUtilAndroidImpl(
     private var promptInfo: PromptInfo? = null
     private var biometricPrompt: BiometricPrompt? = null
 
+    override suspend fun setAndReturnPublicKey(): String? {
+        val authenticateResult = authenticate()
+        return when (authenticateResult) {
+            is AuthenticationResult.Success -> generatePublicKey()
+            else -> null
+        }
+    }
+
     override fun canAuthenticate(): Boolean {
         return BiometricManager.from(activity).canAuthenticate(BIOMETRIC_STRONG) == BiometricManager.BIOMETRIC_SUCCESS
     }

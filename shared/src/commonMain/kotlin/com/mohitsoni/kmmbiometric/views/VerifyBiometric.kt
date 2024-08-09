@@ -21,6 +21,7 @@ import com.mohitsoni.kmmbiometric.BioMetricUtil
 import com.mohitsoni.kmmbiometric.BiometricAuthorizationViewModel
 import com.mohitsoni.kmmbiometric.resources.Res
 import com.mohitsoni.kmmbiometric.resources.biometric
+import com.mohitsoni.kmmbiometric.resources.biometric_authentication
 import org.jetbrains.compose.resources.painterResource
 
 @Composable
@@ -37,7 +38,7 @@ fun VerifyBiometric(
             .padding(all = 16.dp)
     ) {
         Image(
-            painter = painterResource(resource = Res.drawable.biometric),
+            painter = painterResource(resource = Res.drawable.biometric_authentication),
             contentDescription = "biometric"
         )
         Spacer(modifier = Modifier.weight(1f))
