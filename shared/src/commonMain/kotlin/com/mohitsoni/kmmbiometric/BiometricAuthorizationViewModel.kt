@@ -26,31 +26,15 @@ class BiometricAuthorizationViewModel: ViewModel() {
 
     fun setBiometricAuthorization(bioMetricUtil: BioMetricUtil) {
         viewModelScope.launch {
-            when(val biometricResult = bioMetricUtil.authenticate()) {
-                AuthenticationResult.AttemptExhausted -> {
-                    _state.value = BiometricState(isLoading = false, error = "Attempt Exhausted")
-                }
-                is AuthenticationResult.Error -> {
-                    _state.value = BiometricState(isLoading = false, error = biometricResult.error)
-                }
-                AuthenticationResult.Failed -> {
-                    _state.value = BiometricState(isLoading = false, error = "Biometric Failed")
-                }
-                AuthenticationResult.NegativeButtonClick -> {
-                    _state.value = BiometricState(isLoading = false, error = "Biometric Canceled")
-                }
-                AuthenticationResult.Success -> {
-                    _state.value = BiometricState(isLoading = true, error = null)
-                    if (!bioMetricUtil.canAuthenticate()) {
-                        _state.value = BiometricState(isLoading = true, error = "Biometric not available")
-                        return@launch
-                    }
-                    val publicKey = bioMetricUtil.generatePublicKey() ?: ""
-                    setBiometricPublicKeyRepository.set(publicKey)
-                    _state.value = BiometricState(isLoading = false, error = null)
-                    _effect.emit(BiometricEffect.BiometricSetSuccess)
-                }
+            _state.value = BiometricState(isLoading = true, error = null)
+            if (!bioMetricUtil.canAuthenticate()) {
+                _state.value = BiometricState(isLoading = true, error = "Biometric not available")
+                return@launch
             }
+            val publicKey = bioMetricUtil.setAndReturnPublicKey() ?: ""
+            setBiometricPublicKeyRepository.set(publicKey)
+            _state.value = BiometricState(isLoading = false, error = null)
+            _effect.emit(BiometricEffect.BiometricSetSuccess)
 
         }
     }

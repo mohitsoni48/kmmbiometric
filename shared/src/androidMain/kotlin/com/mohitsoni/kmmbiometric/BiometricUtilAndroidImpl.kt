@@ -12,13 +12,21 @@ import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
 class BiometricUtilAndroidImpl(
-    private val activity: Activity,
+    private val activity: FragmentActivity,
     private val cipherUtil: ICipherUtil
 ) : BioMetricUtil {
 
     private val executor = ContextCompat.getMainExecutor(activity)
     private var promptInfo: PromptInfo? = null
     private var biometricPrompt: BiometricPrompt? = null
+
+    override suspend fun setAndReturnPublicKey(): String? {
+        val authenticateResult = authenticate()
+        return when (authenticateResult) {
+            is AuthenticationResult.Success -> generatePublicKey()
+            else -> null
+        }
+    }
 
     override fun canAuthenticate(): Boolean {
         return BiometricManager.from(activity).canAuthenticate(BIOMETRIC_STRONG) == BiometricManager.BIOMETRIC_SUCCESS
@@ -43,7 +51,7 @@ class BiometricUtilAndroidImpl(
 
     override suspend fun authenticate(): AuthenticationResult = suspendCoroutine { continuation ->
 
-        biometricPrompt = BiometricPrompt(activity as FragmentActivity, executor, object :
+        biometricPrompt = BiometricPrompt(activity, executor, object :
             AuthenticationCallback() {
             override fun onAuthenticationFailed() {
                 super.onAuthenticationFailed()

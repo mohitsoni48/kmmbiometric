@@ -3,31 +3,35 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
+		233D688A2C65FB740071A8DB /* BiometricUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D68892C65FB740071A8DB /* BiometricUtil.swift */; };
+		233D688C2C65FBB00071A8DB /* CipherUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D688B2C65FBB00071A8DB /* CipherUtil.swift */; };
 		238E63B22C43A6CA009CC6DA /* SetPublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E63B12C43A6CA009CC6DA /* SetPublicKey.swift */; };
 		238E63B42C43A92C009CC6DA /* VerifyBiometric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E63B32C43A92C009CC6DA /* VerifyBiometric.swift */; };
-		30BBD89FA8796A9B6797E6CA /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF036209BDA6E5BF1BA68421 /* Pods_iosApp.framework */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
+		B4058FFAC578793E917A8C84 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF023C9E821DAC5AA81FB02 /* Pods_iosApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
+		233D68892C65FB740071A8DB /* BiometricUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricUtil.swift; sourceTree = "<group>"; };
+		233D688B2C65FBB00071A8DB /* CipherUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CipherUtil.swift; sourceTree = "<group>"; };
 		238E63B12C43A6CA009CC6DA /* SetPublicKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPublicKey.swift; sourceTree = "<group>"; };
 		238E63B32C43A92C009CC6DA /* VerifyBiometric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyBiometric.swift; sourceTree = "<group>"; };
+		5494C64AF663CFCF15EEFD3B /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7ACDBFDE49D7F2CF6BD6951 /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
-		EA3705DC05087B76E402C269 /* Pods-iosApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.debug.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.debug.xcconfig"; sourceTree = "<group>"; };
-		FF036209BDA6E5BF1BA68421 /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEF023C9E821DAC5AA81FB02 /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F21EE08A49B21B38D5DDF997 /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30BBD89FA8796A9B6797E6CA /* Pods_iosApp.framework in Frameworks */,
+				B4058FFAC578793E917A8C84 /* Pods_iosApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,10 +57,19 @@
 		0D5CFB942850CFC40B6CE5E8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EA3705DC05087B76E402C269 /* Pods-iosApp.debug.xcconfig */,
-				A7ACDBFDE49D7F2CF6BD6951 /* Pods-iosApp.release.xcconfig */,
+				5494C64AF663CFCF15EEFD3B /* Pods-iosApp.debug.xcconfig */,
+				F21EE08A49B21B38D5DDF997 /* Pods-iosApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		233D68882C65FB660071A8DB /* Biometric */ = {
+			isa = PBXGroup;
+			children = (
+				233D68892C65FB740071A8DB /* BiometricUtil.swift */,
+				233D688B2C65FBB00071A8DB /* CipherUtil.swift */,
+			);
+			path = Biometric;
 			sourceTree = "<group>";
 		};
 		7555FF72242A565900829871 = {
@@ -80,6 +93,7 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				233D68882C65FB660071A8DB /* Biometric */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				7555FF82242A565900829871 /* ContentView.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
@@ -94,7 +108,7 @@
 		B0FFA7982D710D94A9EBBA41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FF036209BDA6E5BF1BA68421 /* Pods_iosApp.framework */,
+				AEF023C9E821DAC5AA81FB02 /* Pods_iosApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -106,10 +120,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7555FFA5242A565B00829871 /* Build configuration list for PBXNativeTarget "iosApp" */;
 			buildPhases = (
-				E82922EB971ABD411754A6B7 /* [CP] Check Pods Manifest.lock */,
+				2D1319DD9D7B16971087DF27 /* [CP] Check Pods Manifest.lock */,
 				7555FF77242A565900829871 /* Sources */,
 				7555FF79242A565900829871 /* Resources */,
 				ECCB855EC93537E66FFEB0D9 /* Frameworks */,
+				15FD82303FC37EC32D950B51 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -166,7 +181,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E82922EB971ABD411754A6B7 /* [CP] Check Pods Manifest.lock */ = {
+		15FD82303FC37EC32D950B51 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D1319DD9D7B16971087DF27 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -195,7 +227,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				233D688A2C65FB740071A8DB /* BiometricUtil.swift in Sources */,
 				238E63B22C43A6CA009CC6DA /* SetPublicKey.swift in Sources */,
+				233D688C2C65FBB00071A8DB /* CipherUtil.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				238E63B42C43A92C009CC6DA /* VerifyBiometric.swift in Sources */,
@@ -323,11 +357,12 @@
 		};
 		7555FFA6242A565B00829871 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA3705DC05087B76E402C269 /* Pods-iosApp.debug.xcconfig */;
+			baseConfigurationReference = 5494C64AF663CFCF15EEFD3B /* Pods-iosApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
+				DEVELOPMENT_TEAM = Z57TWPQ3R6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iosApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -335,7 +370,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.iosApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mohitsoni.biometric;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -344,11 +379,12 @@
 		};
 		7555FFA7242A565B00829871 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7ACDBFDE49D7F2CF6BD6951 /* Pods-iosApp.release.xcconfig */;
+			baseConfigurationReference = F21EE08A49B21B38D5DDF997 /* Pods-iosApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
+				DEVELOPMENT_TEAM = Z57TWPQ3R6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iosApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -356,7 +392,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.iosApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mohitsoni.biometric;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

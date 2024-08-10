@@ -1,5 +1,7 @@
 package com.mohitsoni.kmmbiometric
 
+import androidx.compose.ui.window.ComposeUIViewController
+import com.mohitsoni.kmmbiometric.views.MainScreen
 import platform.UIKit.UIDevice
 
 class IOSPlatform: Platform {
