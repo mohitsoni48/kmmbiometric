@@ -32,7 +32,7 @@ class BiometricUtilAndroidImpl(
         return BiometricManager.from(activity).canAuthenticate(BIOMETRIC_STRONG) == BiometricManager.BIOMETRIC_SUCCESS
     }
 
-    override suspend fun generatePublicKey(): String? {
+    override fun generatePublicKey(): String? {
         return cipherUtil.generateKeyPair().public?.encoded?.toBase64Encoded()?.toPemFormat()?.toBase64Encoded()
     }
 

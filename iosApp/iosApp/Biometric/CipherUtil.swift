@@ -10,8 +10,8 @@ import Foundation
 import shared
 
 class CipherUtilIosImpl: ICipherUtil {
-    private let KEY_NAME = "biometric_key"
-    private let tag: String
+    private let KEY_NAME = "my_biometric_key"
+    private let tag: Data
     
     private lazy var key: SecKey? = {
         let query: [String: Any] = [
@@ -27,7 +27,7 @@ class CipherUtilIosImpl: ICipherUtil {
     }()
     
     init() {
-        self.tag = KEY_NAME
+        self.tag = KEY_NAME.data(using: .utf8)!
     }
     
     func generateKeyPair() throws -> CommonKeyPair {
@@ -43,7 +43,7 @@ class CipherUtilIosImpl: ICipherUtil {
             kSecPrivateKeyAttrs as String: [
                 kSecAttrIsPermanent as String: true,
                 kSecAttrApplicationTag as String: tag,
-                kSecAttrAccessControl as String: access
+                kSecAttrAccessControl as String: access,
             ]
         ]
         
